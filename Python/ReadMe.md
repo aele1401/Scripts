@@ -1,5 +1,5 @@
 # Python
-- These python scripts can serve as a foundation for automating various security operations and integrating different security tools and systems using REST APIs, thus enhancing the overall security posture.
+- These python scripts can serve as a foundation for automating various security operations and integrating different security tools and systems using REST APIs.
 ## Automated Security Alert Triage
 - Description: This script fetches security alerts from a SIEM system (like Splunk or IBM QRadar) and categorizes them based on severity. It can enrich alerts with additional data from threat intelligence platforms.
 - Tools/APIs: Splunk REST API, IBM QRadar REST API, Threat Intelligence APIs (e.g., VirusTotal, AlienVault OTX).
