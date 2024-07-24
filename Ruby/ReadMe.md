@@ -1,6 +1,6 @@
 # Ruby
 
-A collection of Ruby scripts used to automate penetration testing processes and streamlining processes using varoous tools and integrations.
+A collection of Ruby scripts used to automate penetration testing processes and streamlining processes using various tools and integrations.
 
 RestClient GEM may need to be installed to interact with REST APIs.
 
