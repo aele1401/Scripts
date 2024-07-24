@@ -26,7 +26,7 @@ SSH into the control node and follow the steps below:
     * Edit `metricbeat-config.yml` file in Ansible container on control node to include ELK IP.
     * Run playbook file
 
-## Patching Vulnerable Servers (Linux & Windows
+## Patching Vulnerable Servers (Linux & Windows)
 - Description: Playbooks for patching vulnerable Windows and Linux servers.
 ### Using the Playbook:
 - Prepare inventory by creating an inventory file (`hosts`) to list servers.
