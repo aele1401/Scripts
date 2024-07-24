@@ -1,6 +1,6 @@
 # Ansible
 
-Collection of Ansible scripts used to automate coniguration of systems, manual tasks, and deployments.
+Collection of Ansible scripts used to automate configuration of systems, manual tasks, and deployments.
 
 ## ELK Stack Configuration & Automation w/ Ansible
 - Description: Automates configuration of ELK machines on. Playbooks implement the following tasks:
