@@ -1,0 +1,87 @@
+---
+- name: Patch Vulnerable WordPress Application
+  hosts: wordpress_servers
+  become: yes
+  vars:
+    wordpress_path: /var/www/html/wordpress
+    backup_path: /var/www/html/wordpress_backup
+    wordpress_url: https://wordpress.org/latest.tar.gz
+    plugins_list:
+      - akismet
+      - jetpack
+    themes_list:
+      - twentytwentyone
+      - twentynineteen
+
+  tasks:
+    - name: Ensure backup directory exists
+      file:
+        path: "{{ backup_path }}"
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: '0755'
+
+    - name: Backup current WordPress installation
+      command: tar -czf "{{ backup_path }}/wordpress_backup_{{ ansible_date_time.iso8601 }}.tar.gz" -C "{{ wordpress_path }}" .
+
+    - name: Download the latest WordPress
+      get_url:
+        url: "{{ wordpress_url }}"
+        dest: /tmp/latest_wordpress.tar.gz
+
+    - name: Extract the latest WordPress
+      unarchive:
+        src: /tmp/latest_wordpress.tar.gz
+        dest: /tmp
+        copy: no
+
+    - name: Update WordPress core files
+      synchronize:
+        src: /tmp/wordpress/
+        dest: "{{ wordpress_path }}"
+        delete: yes
+        rsync_opts:
+          - "--exclude=wp-config.php"
+          - "--exclude=wp-content/uploads"
+
+    - name: Ensure correct ownership and permissions on WordPress directory
+      file:
+        path: "{{ wordpress_path }}"
+        state: directory
+        owner: www-data
+        group: www-data
+        recurse: yes
+
+    - name: Update WordPress plugins
+      shell: |
+        wp plugin update {{ item }}
+      args:
+        chdir: "{{ wordpress_path }}"
+      loop: "{{ plugins_list }}"
+      become_user: www-data
+
+    - name: Update WordPress themes
+      shell: |
+        wp theme update {{ item }}
+      args:
+        chdir: "{{ wordpress_path }}"
+      loop: "{{ themes_list }}"
+      become_user: www-data
+
+    - name: Run WordPress database update
+      shell: |
+        wp core update-db
+      args:
+        chdir: "{{ wordpress_path }}"
+      become_user: www-data
+
+    - name: Remove temporary files
+      file:
+        path: /tmp/latest_wordpress.tar.gz
+        state: absent
+
+    - name: Remove extracted files
+      file:
+        path: /tmp/wordpress
+        state: absent
