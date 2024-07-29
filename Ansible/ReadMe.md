@@ -15,7 +15,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 
 - Copy the configuration (preconfigured) files to your ansible playbook.
-    * Copy `web.yml` and `elk.yml` files into your Ansible container.
+    * Copy `[web.yml](https://github.com/aele1401/Scripts/blob/main/Ansible/ELK/web.yml)` and `[elk.yml](https://github.com/aele1401/Scripts/blob/main/Ansible/ELK/elk.yml)` files into your Ansible container.
 - Attach Ansible docker container.
 - Update Ansible configuration file with ELK IP.
 - Run playbook and navigate to Kibana site to verify installation is working.
@@ -28,13 +28,17 @@ SSH into the control node and follow the steps below:
 
 ## Patching Vulnerable Servers (Linux & Windows)
 - Description: Playbooks for patching vulnerable Windows and Linux servers.
-### Using the Playbook:
+### Using the Playbook for Linux:
 - Prepare inventory by creating an inventory file (`hosts`) to list servers.
 ```
 [linux_servers]
 server1 ansible_host=192.168.1.10 ansible_user=your_user
 server2 ansible_host=192.168.1.11 ansible_user=your_user
+```
 
+### Using the Playbook for Windows:
+- Prepare inventory by creating an inventory file (`hosts`) to list servers.
+```
 [windows_servers]
 server3 ansible_host=192.168.1.12 ansible_user=your_user ansible_password=your_password ansible_connection=winrm ansible_winrm_transport=basic ansible_winrm_server_cert_validation=ignore
 server4 ansible_host=192.168.1.13 ansible_user=your_user ansible_password=your_password ansible_connection=winrm ansible_winrm_transport=basic ansible_winrm_server_cert_validation=ignore
