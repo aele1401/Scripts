@@ -26,7 +26,8 @@ In order to use the playbook, you will need to have an Ansible control node alre
     * Run playbook file
 
 ### Patching Vulnerable Servers (Linux & Windows)
-- Description: Playbooks for patching vulnerable Windows and Linux servers.
+#### Description
+- Playbooks for patching vulnerable Windows and Linux servers.
 #### Using the Playbook for Linux:
 - Prepare inventory by creating an inventory file (`hosts`) to list servers.
 ```
