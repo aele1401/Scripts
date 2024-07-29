@@ -4,7 +4,7 @@ Collection of Ansible scripts used to automate configuration of systems, manual 
 
 ### ELK Stack Configuration & Automation w/ Ansible
 #### Description
-- Automates configuration of an ELK machines. Playbooks implement the following tasks:
+- Automates configuration of an ELK machine. Playbooks implement the following tasks:
 - Installs docker images (docker.io), python module (python3-pip), and enables docker service
 - Increases system memory with sysctl module
 - Downloads and launches docker containers (web & elk)
