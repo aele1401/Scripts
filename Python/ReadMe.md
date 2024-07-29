@@ -1,6 +1,7 @@
 # Python
+## Description
 - These python scripts can serve as a foundation for automating various security operations and integrating different security tools and systems using REST APIs, thus enhancing the overall security posture.
-## Automated Security Alert Triage
+### Automated Security Alert Triage
 - Description: This script fetches security alerts from a SIEM system (like Splunk or IBM QRadar) and categorizes them based on severity. It can enrich alerts with additional data from threat intelligence platforms.
 - Tools/APIs: Splunk REST API, IBM QRadar REST API, Threat Intelligence APIs (e.g., VirusTotal, AlienVault OTX).
 ```
@@ -32,7 +33,7 @@ categorized_alerts = categorize_alerts(alerts)
 print(categorized_alerts)
 ```
 
-## Automated Incident Response
+### Automated Incident Response
 - Description: This script integrates with an incident response platform (like TheHive) and automatically assigns and tracks incidents, while updating their status based on predefined workflows.
 Tools/APIs: TheHive REST API.
 ```
@@ -56,7 +57,7 @@ incident = create_incident(api_url, token, incident_data)
 update_incident_status(api_url, token, incident['id'], 'InProgress')
 ```
 
-## Automated Threat Intelligence Feeds Update
+### Automated Threat Intelligence Feeds Update
 - Description: This script fetches the latest threat intelligence feeds from multiple sources and updates a central threat intelligence platform.
 - Tools/APIs: Threat Intelligence APIs (e.g., VirusTotal, AlienVault OTX), MISP REST API.
 ```
@@ -81,7 +82,7 @@ intel_data = fetch_threat_intel(virus_total_url, token)
 update_misp(misp_url, token, intel_data)
 ```
 
-##  Automated Vulnerability Scanning and Reporting
+###  Automated Vulnerability Scanning and Reporting
 - Description: This script integrates with a vulnerability scanning tool (like Nessus or OpenVAS) to automatically run scans and generate reports.
 - Tools/APIs: Nessus REST API, OpenVAS REST API.
 ```
@@ -107,7 +108,7 @@ report = get_scan_report(api_url, token, scan_id)
 print(report)
 ```
 
-## Automated Firewall Rule Management
+### Automated Firewall Rule Management
 - Description: This script manages firewall rules by adding, updating, or removing rules based on predefined policies.
 - Tools/APIs: Palo Alto Networks PAN-OS REST API, Cisco ASA REST API.
 ```
@@ -131,7 +132,7 @@ add_firewall_rule(api_url, token, rule_data)
 delete_firewall_rule(api_url, token, 1)
 ```
 
-## Automated User Account Management
+### Automated User Account Management
 - Description: This script automates the provisioning, updating, and deprovisioning of user accounts in Active Directory or other identity management systems.
 - Tools/APIs: Active Directory REST API, Azure AD Graph API.
 ```
@@ -155,7 +156,7 @@ create_user(api_url, token, user_data)
 delete_user(api_url, token, 'user_id')
 ```
 
-## Automated Log Data Analysis
+### Automated Log Data Analysis
 - Description: This script fetches log data from Elasticsearch, identifies the most frequent error messages, and generates a summary report.
 - Tools/APIs: Elasticsearch REST API.
 ```
@@ -201,7 +202,7 @@ report = generate_report(most_common_errors)
 
 print(report)
 ```
-## Automated Penetration Testing
+### Automated Penetration Testing
 - Description: This script performs network scanning, vulnerability scanning, and SSH password brute-forcing.
 - Tools/APIs: Nmap and Paramiko
 - Install dependency: `pip install python-nmap requests paramiko`
