@@ -15,7 +15,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 
 - Copy the configuration (preconfigured) files to your ansible playbook.
-    * Copy `[web.yml](https://github.com/aele1401/Scripts/blob/main/Ansible/ELK/web.yml)` and `[elk.yml](https://github.com/aele1401/Scripts/blob/main/Ansible/ELK/elk.yml)` files into your Ansible container.
+    * Copy [web.yml](https://github.com/aele1401/Scripts/blob/main/Ansible/ELK/web.yml) and [elk.yml](https://github.com/aele1401/Scripts/blob/main/Ansible/ELK/elk.yml) files into your Ansible container.
 - Attach Ansible docker container.
 - Update Ansible configuration file with ELK IP.
 - Run playbook and navigate to Kibana site to verify installation is working.
