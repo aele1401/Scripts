@@ -3,11 +3,12 @@
 Collection of Ansible scripts used to automate configuration of systems, manual tasks, and deployments.
 
 ### ELK Stack Configuration & Automation w/ Ansible
-- Description: Automates configuration of ELK machines on. Playbooks implement the following tasks:
-    * Installs docker images (docker.io), python module (python3-pip), and enables docker service
-    * Increases system memory with sysctl module
-    * Downloads and launches docker containers (web & elk)
-    * Installs, sets up, and enables filebeat & metricbeat
+#### Description
+- Automates configuration of ELK machines on. Playbooks implement the following tasks:
+- Installs docker images (docker.io), python module (python3-pip), and enables docker service
+- Increases system memory with sysctl module
+- Downloads and launches docker containers (web & elk)
+- Installs, sets up, and enables filebeat & metricbeat
 
 #### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned:
