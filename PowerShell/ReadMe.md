@@ -3,9 +3,28 @@
 A collection of PowerShell scripts for automating security operations, automating tasks such as monitoring, incident response, system management, application packaging, and software deployments.
 
 ### User Account Management
-- Description: Manages user accounts in Active Directory, including enabling, disabling, and creating accounts.
+- Description: Manages user accounts in Active Directory, including enabling, disabling, creating accounts, and adding user accounts into OUs.
 - Integration: Active Directory
-- File: [account_management](https://github.com/aele1401/Scripts/blob/main/PowerShell/account_management.ps1)
+- Files: 
+    * [account_management](https://github.com/aele1401/Scripts/blob/main/PowerShell/account_management.ps1)
+    * [account_OUs](https://github.com/aele1401/Scripts/blob/main/PowerShell/account_OUs.ps1)
+
+### Active Directory Queries
+- Description: A list of common AD queries.
+- File: [AD_queries](https://github.com/aele1401/Scripts/blob/main/PowerShell/AD_queries.ps1)
+
+### Automation and Reporting
+- Description: Commands for automating reporting for compliance and audits.
+- File: [automation_and_reporting](https://github.com/aele1401/Scripts/blob/main/PowerShell/automation_and_reporting.ps1)
+
+### Computer Management
+- Description: A list of commands for managing computers in an AD environment.
+- File: [computer_management](https://github.com/aele1401/Scripts/blob/main/PowerShell/computer_management.ps1)
+
+### Group Management
+- Description: Manage groups and memberships in AD.
+- Integration: Active Directory
+- File: [group_management](https://github.com/aele1401/Scripts/blob/main/PowerShell/grp_management.ps1)
 
 ### Failed Logins 
 - Description: Filters failed RDP events from Windows Event Viewer.
@@ -62,5 +81,7 @@ A collection of PowerShell scripts for automating security operations, automatin
     * [automated_install](https://github.com/aele1401/Scripts/blob/main/PowerShell/automated_install.ps1)
     * [deploy_sccm](https://github.com/aele1401/Scripts/blob/main/PowerShell/deploy_sccm.ps1)
     * [deploy_gpo](https://github.com/aele1401/Scripts/blob/main/PowerShell/deploy_gpo.ps1)
+
+
 
 
